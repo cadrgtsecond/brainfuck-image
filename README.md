@@ -3,6 +3,15 @@ Ever wanted to embed turing complete programs within ascii art? Well now you can
 
 This is a Rust program that can take in any arbitrary image, convert it into ascii art and then embed any arbitrary brainfuck program within said image.
 
+## Installation
+Install `cargo` and the Rust toolchain.
+then
+```
+git clone https://github.com/cadrgtsecond/brainfuck_image
+cd brainfuck_image
+cargo install --path .
+```
+
 ## Usage
 ```
 brainfuck_image [OPTIONS] --program <PROGRAM> <IMAGE>
@@ -61,3 +70,7 @@ $ brainfuck_image -p '++++++++++[>+++++++++++>++++++++++<<-]>++.+++++.>+++.' tes
 $ brainfuck_image -p '++++++++++[>+++++++++++>++++++++++<<-]>++.+++++.>+++.' tests/image.png | bff
 pug
 ```
+
+## TODO
+- [ ] Improve quality of generated images
+- [ ] Support generating brainfuck programs with messages
