@@ -1,9 +1,4 @@
-use std::{
-    error::Error,
-    iter::repeat,
-    path::PathBuf,
-    io::Write,
-};
+use std::{error::Error, io::Write, path::PathBuf};
 
 use clap::Parser;
 use image::{io::Reader as ImageReader, DynamicImage, GenericImageView, Rgba};
@@ -36,19 +31,17 @@ fn is_char_in_threshold(c1: char, c2: char, threshold: usize) -> bool {
     dist <= threshold
 }
 
-fn image_ascii_chars(img: DynamicImage, required_width: u32) -> impl Iterator<Item = char> {
+fn image_ascii(img: &DynamicImage, required_width: u32) -> impl Iterator<Item = char> + '_ {
     let (w, h) = img.dimensions();
 
     // NOTE: Higher scale means smaller image
     let scale = w / required_width;
     (0..h)
         .filter(move |y| y % (scale * 3) == 0)
-        .zip(repeat(img))
-        .flat_map(move |(y, img)| {
+        .flat_map(move |y| {
             (0..w)
                 .filter(move |x| x % scale == 0)
-                .zip(repeat(img))
-                .map(move |(x, img)| get_pixel_char(pixel_brightness(img.get_pixel(x, y))))
+                .map(move |x| get_pixel_char(pixel_brightness(img.get_pixel(x, y))))
                 .chain(['\n'])
         })
 }
@@ -98,7 +91,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut stdout = std::io::stdout().lock();
     let img = ImageReader::open(image)?.decode()?.grayscale();
 
-    let res: String = brainfuckify(image_ascii_chars(img, width), &program, threshold).collect();
+    let res: String = brainfuckify(image_ascii(&img, width), &program, threshold).collect();
     write!(stdout, "{}", res)?;
     Ok(())
 }
