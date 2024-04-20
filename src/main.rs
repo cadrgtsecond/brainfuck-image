@@ -1,5 +1,11 @@
-use std::{error::Error, io::Write, iter::repeat};
+use std::{
+    error::Error,
+    iter::repeat,
+    path::PathBuf,
+    io::Write,
+};
 
+use clap::Parser;
 use image::{io::Reader as ImageReader, DynamicImage, GenericImageView, Rgba};
 use itertools::unfold;
 
@@ -54,8 +60,7 @@ pub fn brainfuckify<'a>(
 ) -> impl Iterator<Item = char> + 'a {
     unfold(program.chars().peekable(), move |program| {
         let Some(next) = input.next() else {
-          eprintln!("\nFinished with image\n");
-          return program.next();
+            return program.next();
         };
         match program.next_if(|c| is_char_in_threshold(next, *c, threshold)) {
             Some(c) => Some(c),
@@ -63,11 +68,37 @@ pub fn brainfuckify<'a>(
         }
     })
 }
+
+/// Convert images into ascii art and embed brainfuck programs in them
+#[derive(Parser, Debug)]
+struct Args {
+    /// The image to use
+    image: PathBuf,
+    /// The program to embed within the image
+    #[arg(short, long)]
+    program: String,
+    /// The width of the generated ascii art
+    #[arg(short, long, default_value_t = 100)]
+    width: u32,
+    /// The threshold for replacing characters. Higher means more characters will be replaced
+    #[arg(short, long, default_value_t = 4)]
+    threshold: usize,
+}
+
 fn main() -> Result<(), Box<dyn Error>> {
-    let program = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.";
+    let Args {
+        program,
+        width,
+        image,
+        threshold,
+    } = Args::parse();
+    // Remove non-brainfuck characters
+    let program = program.replace(|c| !BRAINFUCK_CHARS.contains(c), "");
+
     let mut stdout = std::io::stdout().lock();
-    let img = ImageReader::open("image.png")?.decode()?.grayscale();
-    let res: String = brainfuckify(image_ascii_chars(img, 200), program, 6).collect();
+    let img = ImageReader::open(image)?.decode()?.grayscale();
+
+    let res: String = brainfuckify(image_ascii_chars(img, width), &program, threshold).collect();
     write!(stdout, "{}", res)?;
     Ok(())
 }
