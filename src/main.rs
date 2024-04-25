@@ -4,18 +4,18 @@ use clap::Parser;
 use image::{io::Reader as ImageReader, DynamicImage, GenericImageView, Rgba};
 use itertools::unfold;
 
-const CHARS: &str = r#" .'`^",:;Il!i><~+_-?][}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"#;
+const CHARS: &str = r#"$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'. "#;
 const BRAINFUCK_CHARS: &str = "<>[]+-,.!";
-const BRIGHTNESS_CHARS: &str = r#" '`^":;Ili~_?}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"#;
+const BRIGHTNESS_CHARS: &str = r#"$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}?_~ilI;:"^`' "#;
 
-fn get_pixel_char(brightness: u8) -> char {
-    let i = (brightness as usize * (BRIGHTNESS_CHARS.len() - 1)) / 255;
+fn get_pixel_char(brightness: f64) -> char {
+    let i = (brightness * (BRIGHTNESS_CHARS.len() - 1) as f64) as usize;
     // Safe because maximum possible value is  BRIGHTNESS_CHARS.len() - 1
     char::from(*BRIGHTNESS_CHARS.as_bytes().get(i).unwrap())
 }
-fn pixel_brightness(Rgba([r, g, b, a]): Rgba<u8>) -> u8 {
-    let avg_color = (r as u32 * g as u32 * b as u32) / 3;
-    ((avg_color * a as u32) / 255) as u8
+/// Computes the brightness value of a pixel
+fn pixel_brightness(Rgba([r, g, b, _]): Rgba<u8>) -> f64 {
+    ((r as f64 * 0.299) + (g as f64 * 0.587) + (b as f64 * 0.114)) / 255.0
 }
 
 /// Computes the distance between two characters in CHARS
