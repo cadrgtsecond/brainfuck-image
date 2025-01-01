@@ -27,46 +27,33 @@ Options:
 ```
 
 ## Example
-![Cute image of a pug](tests/image.png)
+![Cute image of a pug](tests/Pug_portrait.jpg.png)
 
 ```
-$ brainfuck_image -p '++++++++++[>+++++++++++>++++++++++<<-]>++.+++++.>+++.' tests/image.png
-                                                                                                         
-                                                           ^  ;++l/zv/\U00                               
-                                           tYuxxfX+ItxjvqQOmdaaLuvc+;:{qhb#*Y0                           
-                                         JZCrk#L1ufYnuOqQUq*0U0CYLJ)\l:::+LbkhpOmQU                      
-                                       wdwda0h|)rjZ\xcjJqUCvxXm\OkOt1+++:ll:(C CC0Z                      
-                                    L0OqdhZarv/unpph#Zz)n/YawbdvdpMk*#*pQx){+)                           
-                                    Zpbkdk ruzhbooo+#Map0mhpmwamw0hqkohqq0[>++                           
-                                          jxUcwZ*kp#*LohMbW\r*L#hbZ#Qkohu:Il;\                           
-                                          /xYjnOhh*oWboa*h#bkkppa*okdqOqqLXx(}:                          
-                                          ;f/Ukk*aao**aaohhbkkd#b#oabkbbohqn(}                           
-                                          |fznkpaka*oaaoahMMM#W#*#akahkp#dZf}+                           
-                                        fxn\fQXkw*##M#WW0n|U\)))m#o#pdqbpu}+l                            
-                                       ((juLQvfnJ0Qk###MXn)Un/(kdkhqdhX)l;:l+I                           
-                                       |{)(|xUOdcfnncCQQUUzwJz1baahY(+1++({+I":l                         
-                                      \|+}+{1\rxnzXOLL0LQCLpQz(tru/1)){|{>+;"":I"                        
-                                     )f(+++++}((rfjvzUULCUJYzcvx)+llI:;+}lll;;:lI                        
-                                    )xcXj\++<<-]()tjruxxcvxrt)){{})>;:lI++;I;;I;l.                       
-                                    /uxcYvjr/(1++{{|\\\|t|/())+++IlIIi~_IIIii_~i}.                       
-                                   f?rrnjtjuYnnx/t{>{1}{))|1|}1+l++i?ili}?}{{?}?}.                       
-                                  |xn\rjrrft/)ttf/)||1)?~i~~??1(|{1){ii}}iill_~_I                        
-                                 l/v(}njf/f/1{{ilIl_I_;~}{i1_})||(?liiI;:;;lI~__                         
-                                 |rxtx1n/)?~}}~){}{{{{)(|})|v)I"i{()1_~_I"`^"ll                          
-                              }Jt\tjt(nuvr1{{nXffft(||)tf)))()r\j\|\f||\(f{?i?                           
-                           {/jjuQxf/(}frf}~i~{\(()\t|})(_(1){}??il{{/\{}}}{?I:_                          
-                         _tf/xjfxCcxr(/))~lI:lI1/vu(|1{))|/)?1ili_}1vj|{~~I:";il                         
-                        1||||\//tjuzr\f//~I;":I~jv){11?}1)|{{{_}~?1\(v/{1iI;;Ili                         
-                      \?1}{)1)tffxnxxfr|)?il":;;|\)(\{??}1()}}~~?_{(|t1l{}i:;;l_                         
-                     1){???{)/fxzXXCUYjx/}}i;"":)|1})1}}{})1)1){?1|t|}{iI{lI:l~;                         
-                     (({?i~_}1tjxcYUQ0Lrj)_?I;;:({{{}}{1}{}1}1}vvvn/))|}i{lI:l~                          
-                      \/({_~}1)|/nnzzCLQrr\\}ll;jxvcrrj/rrcUvYcrr|){}ll(})Il;~?                          
-                       :()}){}1||rrnvJUCLxjj)?~izXCCYnjuczvnx/()1}{{?_~_f(}lI_}                          
-                        _ut(|1))/frucUUUJjr{)~ilicJYYzcucj/\(){?)}1(){{1 |}_l_?                          
-                        :cXzznnf//rvXYCQ0tf}___?~Jvjnctrrj/(({|///\/){?~ 1{}}}~i                         
-                    1rxfjjrzXJvuJxxxuvcXJ)ii~__i~i\|/f/t/)11)})ljrt\/j|ucr{1{1_?~i}                      
-                  f//fJkzjQ0rX0QxJLzLQOZ_)_iw1~|}_|\1/nut/1l    }jruXUXccx(r/u~~Y{{?(_                   
-                                      _(OarnXtOmh{c                         Y0Cu0mw~)vrX                 
+$ brainfuck_image -p '++++++++++[>+++++++++++>++++++++++<<-]>++.+++++.>+++.' tests/Pug_portrait.jpg
++lllIlIl;lllllI;"^`'             `'^^"""^`^^`^"^^^"^^^"^^^"^^`^^``^````````^^``^^\0XcvcznruUCQJzvnjf
+;;:;;I;;""":::;"^```'              ```^^":I+h#WM&%%%BB%%WMWB%%8oZ|++))}})+}++;`^+JJcnrxnunnxxxnxnrnn
+^""^"";"""""::"^^^'` '     '  '' +a##WM#MW#O*#*pkoapo#WMh#Y(f/Ybh/|fj()1))tr\1\ruUzXvuvccnrjt\/trrf(
+"";:;;;II;;;;":""^`'''   {aW%88WoodkkCcQpdpx/YYJYOLkkdOwbokdU1`+I[1Uq/)|>1{\ft/1+tjnzvcuvvzzr)}+++++
+:";:;;II;l;I;::"""`'''')k#wmdaqowCOwLUxcmOL(uccYmowpmppmbkhhM##dv1l;})(X(1\||)){{(xXznuvzYXYcnxxjftt
+^^"^""""^^""^^`"+\cXYYkkU{rCmbbhaohOxxvXnU)rXC0pLCpmuZYphpbaZ*W&&#Wa\I+1}1r)1|1l+/0Ynujxf\//trnnunvx
+`'`'`^''' ''`+\uvxrxLLl;IU0OZhapmqQqzUvYuXXvXmXLq\LUq0bo#*M8&*a#&W&&##kj+>+r(+II+xufrxrjjjt\)\|tftfn
+ '' '     +nn)1|\/xz+(+{ZJXYZnwZCLr/Ju/nv|xc\tv||pQLv;   ^++jjr0dMoqpOnj{+l:{|+1)(/(tfffvUUYzvxjnuun
+` '````  ^|1<<{{1/f-])h#oCj\Zu>++fpvC{)\x|\}{}t?vx}}.  "/{  +  ":+l\)lYtt{+:"+f\(\|)|rrunczYUJLJUYzY
+ ' ' ''   +\i:i~}n{}u#ohJkYn)lI.   >|+{:+I+.``;'`    'i( )_?l"; ^`)~~~rjunjt::"{f)/(_|fjfjncczYXzzXY
+    '      :{?^"(1~~rQCu\l(l   `?;` ^ I?l^;}_fx1"';~Jn))c_:1^` \iilli1nuzXjrr;:I1)()_1tf/tjxuvvczJUc
+    ' '   ' '`_I{?~~"i?`} '' `^l^ I1t/t`)~rz\}C\?|}`  ?;{f~?}i^`iI""_vrvOUXLzrrjt(11?_/f///jjrjnrjjf
+ '''`'^``'`''''`l(_l'~'I:;? ^?~ /{()l'';;(``{iL   YLiiI'I'I_\` |i:?i))|rYqwQZkU?ll__{l}|((|())|)(\\/
+```````````^```^^)i:`' :__^'`   }}?II'`I}txt`fl'^t)j)i{ `'l|I;1I"::~?fzvurxQ*#Mh|II??__{))))(1})(1?~
+^"^""^"^^^"`^^^^`iI'''':\|} ''`' l_~^~)"|)}zrYl~/v?t;?|;_"i?//(i|CJxfC\?\OdbMW&&ozI_~ii(){{{{__~iiii
+"""^"""^^^^```^`:^^^`'`"|f/(l^`~'//|"?i_l}l'^: :"^";1 ~_":}1?}Ii_i"~rInwpo#MW&&MdOI;iil1){}{}}?~~iii
+:^"""""::^^^`^^^`"^^``'  i/(t{` `?~_I"I"l^ '`:l'`:`'  ';l\li?_t;"" 'luk*M#M&WMa#MWMW&&&oO/}}?_?_~_~~
+:"":""":"^^^````^^`^`' ' ;tun)I{):ll^^:^ '"`^l:l ^^:":`''  `;''   "lCbho##*#*W##&8&W&&WW&ot?~~_?__~~
+:":::""""^^^`^^`^^^`^'`  "|zXvji`"` '"" '  `iI;l' '' `"''': ''l}jcwkhaa*dkkkak*WMMWMWW&&8&&aC{~__~~_
+:"":"""""^^^````````'' '  ~xUYujf^       ' '  '       ^?1\/jnnYv0ULdw0Umhkodo**0#k*W&8%%8&W#hjl_i~~{
+"""""":""^"^"``"`^``''     ;tJUnnvvj\)}(_}_{{}jj\j/tufj{r\jrnxr1r\|j\wa#M&#oko#kkoMW&8%%%%8&W##k01}|
+"^"""^""^""^^^^^``````'      `~/XX/(unnuufjtrjvcrxx/f)_)(l}~\nLdbhohkb#Mb**MM8&ak#W&8&W&W&WoM##**o#M
+^`^`^^^^^^^`"``^^`^^`""`;"^`^?CCzcvccczLQ0QXQUczUCXcQcmmwwdaa*#o##Mo#hwW&#W88M8**WW&&W&W&&&WW&WW&W&W
 $ brainfuck_image -p '++++++++++[>+++++++++++>++++++++++<<-]>++.+++++.>+++.' tests/image.png | bff
 pug
 ```
